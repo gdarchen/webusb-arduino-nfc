@@ -953,6 +953,14 @@
     mkdirp "^0.5.1"
     rimraf "^2.5.2"
 
+"@pokusew/pcsclite@^0.5.2":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@pokusew/pcsclite/-/pcsclite-0.5.2.tgz#d5387251441e5a6b70337a8c66101514273a52e6"
+  integrity sha512-Pmu3aIJBk8vrtxHAxyEA54FhsVDShqzr/tvya0c0TS4vOgWjcz0EhOYIWPzkvI8wjcqab3VHQJm5DGt55Ln5Tw==
+  dependencies:
+    bindings "^1.4.0"
+    nan "^2.12.1"
+
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
   resolved "https://registry.npmjs.org/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
@@ -2219,6 +2227,13 @@ binary-extensions@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.0.0.tgz#23c0df14f6a88077f5f986c0d167ec03c3d5537c"
   integrity sha512-Phlt0plgpIIBOGTT/ehfFnbNlfsDEiqmzE2KRXoX1bLIlir4X/MR+zSyBEkL05ffWgnRSf/DXv+WrUAVr93/ow==
+
+bindings@^1.4.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/bindings/-/bindings-1.5.0.tgz#10353c9e945334bc0511a6d90b38fbc7c9c504df"
+  integrity sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==
+  dependencies:
+    file-uri-to-path "1.0.0"
 
 block-stream@*:
   version "0.0.9"
@@ -4335,6 +4350,11 @@ file-loader@^1.1.11:
   dependencies:
     loader-utils "^1.0.2"
     schema-utils "^0.4.5"
+
+file-uri-to-path@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/file-uri-to-path/-/file-uri-to-path-1.0.0.tgz#553a7b8446ff6f684359c445f1e37a05dacc33dd"
+  integrity sha512-0Zt+s3L7Vf1biwWZ29aARiVYLx7iMGnEUl9x33fbB/j3jR81u/O2LbqK+Bm1CDSNDKVtJ/YjwY7TUd5SkeLQLw==
 
 filename-regex@^2.0.0:
   version "2.0.1"
@@ -6645,6 +6665,13 @@ neo-async@^2.5.0, neo-async@^2.6.1:
   version "2.6.1"
   resolved "https://registry.npmjs.org/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
+
+nfc-pcsc@^0.7.4:
+  version "0.7.4"
+  resolved "https://registry.yarnpkg.com/nfc-pcsc/-/nfc-pcsc-0.7.4.tgz#1c587c383f1f6aac3a7a0f71f727d899a8c089d1"
+  integrity sha512-XprBgVQt+qH+Q5HStOikbYlAPHBQOxPj8PXLifKrLCfiLzq0p5aExjM0qqX+KTfz8WiHnJi1uH5CBwc4pityOw==
+  dependencies:
+    "@pokusew/pcsclite" "^0.5.2"
 
 nice-try@^1.0.4:
   version "1.0.5"

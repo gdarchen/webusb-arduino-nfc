@@ -61,6 +61,7 @@
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.3",
+    "nfc-pcsc": "^0.7.4",
     "prop-types": "^15.6.2",
     "react": "16.8.6",
     "react-dom": "16.8.6",
