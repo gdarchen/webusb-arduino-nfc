@@ -32,10 +32,16 @@ module.exports = {
             loader: "babel-loader",
             options: {
               cacheDirectory: true,
-              plugins: ["react-hot-loader/babel"]
+              plugins: ["react-hot-loader/babel"],
+              presets: ["@babel/preset-env", "@babel/preset-react"]
             }
           },
-          "babel-loader",
+          {
+            loader: "babel-loader",
+            options: {
+              presets: ["@babel/preset-env", "@babel/preset-react"]
+            }
+          },
           "eslint-loader"
         ].filter(Boolean)
       },

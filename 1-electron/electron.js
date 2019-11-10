@@ -1,3 +1,4 @@
+require("@babel/register");
 const electron = require("electron");
 const { app } = electron;
 const { BrowserWindow } = electron;
