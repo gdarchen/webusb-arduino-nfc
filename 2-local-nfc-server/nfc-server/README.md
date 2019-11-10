@@ -12,9 +12,7 @@ It has been tested with this configuration:
 
 On `connection` events, the server starts listening for `require-scan` events.
 
-If there is more than one connection established, it sends a `too-many-connections` event.
-
-Else, it interacts with the NFC USB Reader and sends the detected payload thanks to a `nfc-tag-scanned` event to the socket.
+It interacts with the NFC USB Reader and sends the detected payload thanks to a `nfc-tag-scanned` event to the socket.
 
 ## Installation
 
