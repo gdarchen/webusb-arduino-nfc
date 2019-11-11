@@ -1,0 +1,33 @@
+{
+  "name": "local-nfc-server",
+  "version": "0.0.1",
+  "description": "Local server to read NFC tags",
+  "main": "src/index.js",
+  "author": "Gautier Darchen <darchen.gautier@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-syntax-object-rest-spread": "^7.2.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.4.4",
+    "@babel/register": "^7.4.4",
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.0.1",
+    "@types/node": "^8.0.29",
+    "husky": "^1.1.1"
+  },
+  "dependencies": {
+    "nfc-pcsc": "^0.7.4",
+    "prettier": "^1.17.1",
+    "socket.io": "^2.2.0"
+  },
+  "scripts": {
+    "start": "node -r @babel/register src/index.js"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e %HUSKY_GIT_PARAMS%"
+    }
+  }
+}
