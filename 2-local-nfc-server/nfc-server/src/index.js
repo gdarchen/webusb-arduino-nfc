@@ -1,51 +1,45 @@
-// import { NFC } from 'nfc-pcsc';
+import { NFC } from 'nfc-pcsc';
 import SocketIO from 'socket.io';
 const io = SocketIO(4242);
-
-// console.log('test', new NFC());
 
 io.on('connection', (socket) => {
   console.log('waiting for nfc scanner');
   socket.on('require-scan', () => {
-    let connectedSockets = Object.keys(io.sockets.sockets);
-
     socket.on('disconnect', () => {
       console.log('disconnect', Object.keys(io.sockets.sockets).filter((s) => s.id !== socket.id));
-      connectedSockets = Object.keys(io.sockets.sockets).filter((s) => s.id !== socket.id);
     });
 
-    socket.emit('nfc-tag-scanned', 'this is payload');
+    const nfc = new NFC();
+    nfc.on('reader', (reader) => {
+      console.log(`${reader.reader.name}  device attached`);
 
-    //       const nfc = new NFC(); // optionally you can pass logger
-    // nfc.on('reader', (reader) => {
-    //   console.log(`${reader.reader.name}  device attached`);
+      reader.on('card', async (card) => {
+        try {
+          const data = await reader.read(6, 24);
+          const extractedPayload = data.toString().split('/')[1];
 
-    //   reader.on('card', async (card) => {
-    //     try {
-    //       const data = await reader.read(8, 30);
-    //       const payload = parseInt(data.toString());
-    //       console.log(`Socket ID: ${socket.id}, OF: ${payload}`);
-    //       socket.emit('nfc-tag-scanned', payload);
-    //     } catch (err) {
-    //       console.error(err);
-    //     }
-    //   });
+          console.log(`Socket ID: ${socket.id}, Read tag: ${extractedPayload}`);
+          socket.emit('nfc-tag-scanned', extractedPayload);
+        } catch (err) {
+          console.error(err);
+        }
+      });
 
-    //   reader.on('card.off', (card) => {
-    //     console.log(`${reader.reader.name}  card removed`);
-    //   });
+      reader.on('card.off', (card) => {
+        console.log(`${reader.reader.name}  card removed`);
+      });
 
-    //   reader.on('error', (err) => {
-    //     console.log(`${reader.reader.name}  an error occurred`, err);
-    //   });
+      reader.on('error', (err) => {
+        console.log(`${reader.reader.name}  an error occurred`, err);
+      });
 
-    //   reader.on('end', () => {
-    //     console.log(`${reader.reader.name}  device removed`);
-    //   });
-    // });
+      reader.on('end', () => {
+        console.log(`${reader.reader.name}  device removed`);
+      });
+    });
 
-    // nfc.on('error', (err) => {
-    //   console.log('an error occurred', err);
-    // });
+    nfc.on('error', (err) => {
+      console.log('an error occurred', err);
+    });
   });
 });

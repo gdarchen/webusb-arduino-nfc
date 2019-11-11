@@ -380,13 +380,13 @@
     mkdirp "^0.5.1"
     rimraf "^2.5.2"
 
-"@pokusew/pcsclite@^0.4.17":
-  version "0.4.18"
-  resolved "https://registry.yarnpkg.com/@pokusew/pcsclite/-/pcsclite-0.4.18.tgz#1dcc30896078a94fb9186fc1d35ad622e5bb988f"
-  integrity sha1-HcwwiWB4qU+5GG/B01rWIuW7mI8=
+"@pokusew/pcsclite@^0.5.2":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@pokusew/pcsclite/-/pcsclite-0.5.2.tgz#d5387251441e5a6b70337a8c66101514273a52e6"
+  integrity sha512-Pmu3aIJBk8vrtxHAxyEA54FhsVDShqzr/tvya0c0TS4vOgWjcz0EhOYIWPzkvI8wjcqab3VHQJm5DGt55Ln5Tw==
   dependencies:
-    bindings "^1.3.0"
-    nan "^2.7.0"
+    bindings "^1.4.0"
+    nan "^2.12.1"
 
 "@types/node@^8.0.29":
   version "8.10.49"
@@ -586,7 +586,7 @@ binary-extensions@^1.0.0:
   resolved "https://registry.npmjs.org/binary-extensions/-/binary-extensions-1.13.1.tgz#598afe54755b2868a5330d2aff9d4ebb53209b65"
   integrity sha512-Un7MIEDdUC5gNpcGDV97op1Ywk748MpHcFTHoYs6qnj1Z3j7I53VG3nwZhKzoBZmbdRNnb6WRdFlwl7tSDuZGw==
 
-bindings@^1.3.0:
+bindings@^1.4.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/bindings/-/bindings-1.5.0.tgz#10353c9e945334bc0511a6d90b38fbc7c9c504df"
   integrity sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==
@@ -1868,7 +1868,7 @@ ms@^2.1.1:
   resolved "https://registry.npmjs.org/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
-nan@^2.12.1, nan@^2.7.0:
+nan@^2.12.1:
   version "2.14.0"
   resolved "https://registry.npmjs.org/nan/-/nan-2.14.0.tgz#7818f722027b2459a86f0295d434d1fc2336c52c"
   integrity sha512-INOFj37C7k3AfaNTtX8RhsTw7qRy7eLET14cROi9+5HAVbbHuIWUHEauBv5qT4Av2tWasiTY1Jw6puUNqRJXQg==
@@ -1904,12 +1904,12 @@ negotiator@0.6.2:
   resolved "https://registry.npmjs.org/negotiator/-/negotiator-0.6.2.tgz#feacf7ccf525a77ae9634436a64883ffeca346fb"
   integrity sha512-hZXc7K2e+PgeI1eDBe/10Ard4ekbfrrqG8Ep+8Jmf4JID2bNg7NvCPOZN+kfF574pFQI7mum2AUqDidoKqcTOw==
 
-nfc-pcsc@0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/nfc-pcsc/-/nfc-pcsc-0.5.0.tgz#6c8ea5488608e68358b6979de61e3af7b4941dce"
-  integrity sha1-bI6lSIYI5oNYtped5h4697SUHc4=
+nfc-pcsc@^0.7.4:
+  version "0.7.4"
+  resolved "https://registry.yarnpkg.com/nfc-pcsc/-/nfc-pcsc-0.7.4.tgz#1c587c383f1f6aac3a7a0f71f727d899a8c089d1"
+  integrity sha512-XprBgVQt+qH+Q5HStOikbYlAPHBQOxPj8PXLifKrLCfiLzq0p5aExjM0qqX+KTfz8WiHnJi1uH5CBwc4pityOw==
   dependencies:
-    "@pokusew/pcsclite" "^0.4.17"
+    "@pokusew/pcsclite" "^0.5.2"
 
 nice-try@^1.0.4:
   version "1.0.5"

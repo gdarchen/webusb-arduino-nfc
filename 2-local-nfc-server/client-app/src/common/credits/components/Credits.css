@@ -1,0 +1,36 @@
+.creditsContainer {
+  display: flex;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: large;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.creditsContainer > div:not(:last-child) {
+  margin-right: 15px;
+}
+
+.socialMediaContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.githubContainer {
+  color: white;
+}
+
+.linkedInContainer {
+  color: #0077b5;
+}
+
+.twitterContainer {
+  color: #1da1f2;
+}
+
+.link {
+  color: unset;
+}
