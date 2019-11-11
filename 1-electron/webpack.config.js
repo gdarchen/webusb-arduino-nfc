@@ -14,10 +14,12 @@ const WebpackCleanupPlugin = require("webpack-cleanup-plugin");
 
 module.exports = {
   context: sourcePath,
-  entry: ["@babel/polyfill", "./index.jsx"],
+  entry: {
+    app: "./index.js"
+  },
   output: {
     path: outPath,
-    filename: "[name].[hash].js",
+    filename: "bundle.js",
     chunkFilename: "[chunkhash].js",
     publicPath: isProduction ? "" : "/"
   },
@@ -32,22 +34,15 @@ module.exports = {
             loader: "babel-loader",
             options: {
               cacheDirectory: true,
-              plugins: ["react-hot-loader/babel"],
-              presets: ["@babel/preset-env", "@babel/preset-react"]
+              plugins: ["react-hot-loader/babel"]
             }
           },
-          {
-            loader: "babel-loader",
-            options: {
-              presets: ["@babel/preset-env", "@babel/preset-react"]
-            }
-          },
+          "babel-loader",
           "eslint-loader"
         ].filter(Boolean)
       },
       {
         test: /^((?!\.global).)*(s)?css$/,
-        exclude: [/node_modules/],
         use: [
           {
             loader: "style-loader"
@@ -58,20 +53,13 @@ module.exports = {
               modules: true,
               importLoaders: 1,
               localIdentName: "[name]_[local]_[hash:base64]",
-              sourceMap: true
+              sourceMap: true,
+              minimize: true
             }
           },
           {
             loader: "sass-loader"
           }
-        ]
-      },
-      {
-        test: /(s)?css$/,
-        include: [/node_modules/],
-        use: [
-          { loader: "style-loader" },
-          { loader: "css-loader", options: { modules: false } }
         ]
       },
       {
@@ -83,30 +71,35 @@ module.exports = {
         ]
       },
       { test: /\.html$/, use: "html-loader" },
+      { test: /\.(a?png|svg)$/, use: "url-loader?limit=10000" },
       {
-        test: /\.(jpe?g|png|gif|svg|woff|woff2|ttf|otf|eot)$/i,
-        loader: "file-loader",
-        options: {
-          name: isProduction ? "[contenthash].[ext]" : "[name].[ext]"
-        }
+        test: /\.(jpe?g|gif|bmp|mp3|mp4|ogg|wav|eot|ttf|woff|woff2)$/,
+        use: "file-loader"
       }
     ]
   },
   resolve: {
     extensions: [".js", ".jsx"] // to resolve .js or .jsx file without having to specify the extension in imports
   },
+  externals: {
+    "nfc-pcsc": "require('nfc-pcsc')"
+  },
   optimization: {
-    moduleIds: "hashed",
-    runtimeChunk: "single",
     splitChunks: {
+      name: true,
       cacheGroups: {
-        vendor: {
+        commons: {
+          chunks: "initial",
+          minChunks: 2
+        },
+        vendors: {
           test: /[\\/]node_modules[\\/]/,
-          name: "vendors",
-          chunks: "all"
+          chunks: "all",
+          priority: -10
         }
       }
-    }
+    },
+    runtimeChunk: true
   },
   plugins: [
     new webpack.EnvironmentPlugin({
@@ -119,17 +112,18 @@ module.exports = {
       disable: !isProduction
     }),
     new HtmlWebpackPlugin({
-      template: "./index.html",
-      favicon: "./resources/favicon.ico"
+      template: "./index.html"
     })
   ],
   devServer: {
     contentBase: sourcePath,
     hot: true,
     inline: true,
-    historyApiFallback: true,
+    historyApiFallback: {
+      disableDotRule: true
+    },
     stats: "minimal",
     clientLogLevel: "warning"
   },
-  devtool: isProduction ? "hidden-source-map" : "eval-source-map"
+  devtool: isProduction ? "hidden-source-map" : "cheap-module-eval-source-map"
 };

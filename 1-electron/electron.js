@@ -1,4 +1,3 @@
-require("@babel/register");
 const electron = require("electron");
 const { app } = electron;
 const { BrowserWindow } = electron;
@@ -15,14 +14,14 @@ function createWindow() {
     width: 2736,
     height: 1824,
     show: false,
-    icon: `${__dirname}./icons/icon.png`
+    icon: `./icons/icon.png`
   });
 
   if (!isDev) {
     mainWindow.setFullScreen(true);
   }
 
-  mainWindow.openDevTools();
+  // mainWindow.openDevTools();
 
   mainWindow.once("ready-to-show", () => {
     mainWindow.show();

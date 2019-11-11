@@ -1,23 +1,22 @@
 {
   "parser": "babel-eslint",
-  "plugins": ["react", "prettier", "flowtype"],
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "max-len": [1, 180, 2, {"ignoreComments": true}],
+    "no-console": 0,
+    "no-debugger": "off"
+  },
   "extends": [
-    "airbnb",
-    "prettier/react", // Turns off all rules that are unnecessary or might conflict with Prettier,
-    "plugin:prettier/recommended" // Runs Prettier as an ESLint rule and reports differences as individual ESLint issues
+    "eslint:recommended",
+    "plugin:react/recommended"
   ],
   "env": {
     "browser": true,
-    "node": true,
-    "jest": true,
-    "es6": true
+    "node": true
   },
   "globals": {
     "document": false
-  },
-  "rules": {
-    "no-console": 0,
-    "no-debugger": "off",
-    "react/prefer-stateless-function": [0] // disabled to choose whether to use stateless function or class Component
   }
 }

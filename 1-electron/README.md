@@ -31,3 +31,25 @@ There is a `.nvmrc` at the root of this project to help you use the supported v1
 > # Use your favourite one
 > $ nvm use <your_node_version>
 > ```
+
+### Run locally
+
+- First of all, you need to install the project's dependencies:
+  ```bash
+  $ yarn install
+  ```
+- Then, you need to [recompile Node.js native modules](https://nodejs.org/api/addons.html). Indeed, this library uses the [`nfc-pcsc` library](https://github.com/pokusew/nfc-pcsc) Node Native Module (and its underlying library [`node-pcsclite`](https://github.com/pokusew/node-pcsclite) which provides access to PC/SC API).
+  See [here](https://electronjs.org/docs/tutorial/using-native-node-modules) to understand how to use native modules in Electron.
+
+  > Have a look at the `nfc-pcsc` library FAQ [here](https://electronjs.org/docs/tutorial/using-native-node-modules) to better understand the why we need to build the app on the target platforms when using native node modules.
+
+  To rebuild the native modules for your platform, run:
+
+  ```bash
+  $ yarn build
+  ```
+
+- Finally, you can run the application locally:
+  ```bash
+  $ yarn start
+  ```

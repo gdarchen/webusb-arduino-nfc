@@ -1,0 +1,36 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #282828;
+}
+
+.readValue {
+  display: inline;
+  font-weight: bolder;
+  font-size: large;
+  font-style: italic;
+}
+
+.nfcCard {
+  animation-duration: 1s;
+  animation-name: slideUp;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.waitingContainer {
+  color: white;
+  @extend .container;
+}
