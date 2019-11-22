@@ -4,8 +4,6 @@ const useNFCReader = () => {
   const [device, setDevice] = useState();
   const [readTag, setReadTag] = useState();
 
-  console.log(device);
-
   // Loop to read the NFC tags
   const readLoop = async () => {
     try {
@@ -23,10 +21,31 @@ const useNFCReader = () => {
         }
       }
     } catch (e) {
-      // An error might occur if we cancel out the transfer (because a tag was already read) while reading
       console.error(
         `Error while reading from the NFC Reader:\n${e.toString()}`
       );
+      throw e;
+    }
+  };
+
+  const setupNFCReader = async () => {
+    try {
+      if (device) {
+        await device.open();
+        await device.selectConfiguration(1);
+        await device.claimInterface(2);
+        await device.controlTransferOut({
+          requestType: "class",
+          recipient: "interface",
+          request: 0x22,
+          value: 0x01,
+          index: 0x02
+        });
+
+        readLoop();
+      }
+    } catch (e) {
+      console.error(`Error while setting up the NFC Reader:\n${e.toString()}`);
     }
   };
 
@@ -42,33 +61,8 @@ const useNFCReader = () => {
 
   // When a device has been found, we initiate a connection with it
   useEffect(() => {
-    const setupNFCReader = async () => {
-      try {
-        if (device) {
-          await device.open();
-          await device.selectConfiguration(1);
-          await device.claimInterface(2);
-          await device.controlTransferOut({
-            requestType: "class",
-            recipient: "interface",
-            request: 0x22,
-            value: 0x01,
-            index: 0x02
-          });
-
-          readLoop();
-        }
-      } catch (e) {
-        console.error(
-          `Error while setting up the NFC Reader:\n${e.toString()}`
-        );
-      }
-    };
-
-    if (device) {
-      setupNFCReader();
-    }
-  }, [device]);
+    setupNFCReader();
+  });
 
   return [readTag, device, configureNewNFCReader];
 };

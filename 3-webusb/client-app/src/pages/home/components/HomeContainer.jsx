@@ -5,7 +5,6 @@ import Home from "./Home";
 
 const HomeContainer = () => {
   const [readTag, device, configureNewNFCReader] = useNFCReader();
-  console.log(device);
 
   return (
     <Home
