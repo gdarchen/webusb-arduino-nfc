@@ -5,7 +5,7 @@
 // Third-party WebUSB Arduino library
 #include <WebUSB.h>
 
-WebUSB WebUSBSerial( 0/* http:// */, "localhost:8080");
+WebUSB WebUSBSerial( 0/* http:// */, "localhost:3000");
 
 // #define Serial WebUSBSerial
 

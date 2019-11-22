@@ -1,11 +1,23 @@
 import "./Home.css";
 
 import React from "react";
-import { Card, Loader } from "semantic-ui-react";
+import { Button, Card, Loader } from "semantic-ui-react";
 
 import Credits from "../../../common/credits";
 
-const Home = ({ readTag }) => {
+const Home = ({ readTag, isDeviceConnected, configureNewNFCReader }) => {
+  if (!isDeviceConnected) {
+    return (
+      <div className="App">
+        <Button onClick={configureNewNFCReader} size="small" color="orange">
+          Configurer le lecteur NFC
+        </Button>
+
+        <Credits />
+      </div>
+    );
+  }
+
   return (
     <div className="App">
       {readTag ? (
