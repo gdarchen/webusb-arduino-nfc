@@ -1,5 +1,5 @@
 dist
-build
+build/
 node_modules/
 .idea/
 *.imlyarn-error.log
