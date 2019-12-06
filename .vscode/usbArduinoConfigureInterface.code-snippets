@@ -1,0 +1,18 @@
+{
+  "Configure Arduino WebUSB interface": {
+    "prefix": "usb-arduino-configure-interface",
+    "description": "Configure one interface to claim when an Arduino is plugged in USB.",
+    "body": [
+      "await ${device}.open();",
+      "await ${device}.selectConfiguration(1);",
+      "await ${device}.claimInterface(2);",
+      "await ${device}.controlTransferOut({",
+      "\trequestType: 'class',",
+      "\trecipient: 'interface',",
+      "\trequest: 0x22,",
+      "\tvalue: 0x01,",
+      "\tindex: 0x02",
+      "});"
+    ]
+  }
+}

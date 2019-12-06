@@ -1,0 +1,11 @@
+{
+  "Request connection to USB Device": {
+    "prefix": "usb-request-device",
+    "description": "Request connection to a device plugged in USB.",
+    "body": [
+      "const ${1:authorizedDevice} = await navigator.usb.requestDevice({",
+      "\tfilters: [{ vendorId: $0 }]",
+      "});"
+    ]
+  }
+}
