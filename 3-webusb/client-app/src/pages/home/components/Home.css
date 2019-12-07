@@ -1,0 +1,31 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #282828;
+}
+
+.read-value {
+  display: inline;
+  font-weight: bolder;
+  font-size: large;
+  font-style: italic;
+}
+
+.nfc-card {
+  animation-duration: 1s;
+  animation-name: slideUp;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
