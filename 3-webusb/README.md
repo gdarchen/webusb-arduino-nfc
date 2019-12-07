@@ -1,6 +1,6 @@
 # Using _WebUSB_ and a Arduino board
 
-This example aims at showing up how to communicate between a USB Arduino board plugged in a NFC card reader with a web applixation.
+This example aims at showing up how to communicate between a USB Arduino board plugged in a NFC card reader with a web application.
 
 Whenever an NFC tag is read, the decoded payload is written by the Arduino in a WebUSB serial and the front-end application can read it.
 
@@ -80,7 +80,7 @@ You are now ready to load the Arduino sketch on your board.
 
 After having plugged the previously configured device, open your Arduino IDE, and select it from the plugged boards.
 
-Import the sketch from this repository (`<<REPOSITORY_FOLDER>/3-webusb/arduino/sketches/NFCWebUsbReadTag/NFCWebUsbReadTag.ino`) and upload it to your board.
+Import the sketch from this repository (`<REPOSITORY_FOLDER>/3-webusb/arduino/sketches/NFCWebUsbReadTag/NFCWebUsbReadTag.ino`) and upload it to your board.
 
 It should now be listening for NFC tags, you now have to configure the client application to interpret the read payloads.
 
