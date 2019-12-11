@@ -5,10 +5,6 @@ const io = SocketIO(4242);
 io.on('connection', (socket) => {
   console.log('waiting for nfc scanner');
   socket.on('require-scan', () => {
-    socket.on('disconnect', () => {
-      console.log('disconnect', Object.keys(io.sockets.sockets).filter((s) => s.id !== socket.id));
-    });
-
     const nfc = new NFC();
     nfc.on('reader', (reader) => {
       console.log(`${reader.reader.name}  device attached`);
