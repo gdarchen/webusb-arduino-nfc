@@ -10,7 +10,7 @@ const HomeContainer = () => {
 
   useEffect(() => {
     setSocket(SocketIO.connect(APILocalSocketUrl));
-  }, []);
+  }, [APILocalSocketUrl]);
 
   useEffect(() => {
     if (!socket) {
