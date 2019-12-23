@@ -16,9 +16,7 @@ const useNFCReader = () => {
         setReadTag(decodedPayload);
         console.log(`Read NTAG213 containing '${decodedPayload}'.`);
 
-        if (device) {
-          readLoop();
-        }
+        readLoop();
       }
     } catch (e) {
       console.error(
@@ -46,6 +44,7 @@ const useNFCReader = () => {
       }
     } catch (e) {
       console.error(`Error while setting up the NFC Reader:\n${e.toString()}`);
+      throw e;
     }
   };
 
