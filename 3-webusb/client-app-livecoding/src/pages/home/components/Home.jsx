@@ -10,7 +10,7 @@ const Home = ({ readTag, isDeviceConnected, configureNewNFCReader }) => {
     return (
       <div className="App">
         <Button onClick={configureNewNFCReader} size="small" color="orange">
-          Configurer le lecteur NFC
+          Configure the NFC Reader
         </Button>
 
         <Credits />
