@@ -52,15 +52,15 @@
     ```
    3. **Inside** the previous if, call recursively `readLoop()` (at the end)
    4. Read the bytes from the device
-   ```js
-  const payload = await device.transferIn(5, 64);
-   ```
+    ```js
+    const payload = await device.transferIn(5, 64);
+    ```
    5. Decode the payload
    ```js
-  const decoder = new TextDecoder();
-  const decodedPayload = decoder.decode(payload.data).split("/")[1];
+    const decoder = new TextDecoder();
+    const decodedPayload = decoder.decode(payload.data).split("/")[1];
    ``` 
    6. Set the read tag state
-   ```js
-  setReadTag(decodedPayload)
-   ```
+    ```js
+    setReadTag(decodedPayload)
+    ```
