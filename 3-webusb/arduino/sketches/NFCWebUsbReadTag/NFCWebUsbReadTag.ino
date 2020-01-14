@@ -5,7 +5,8 @@
 // Third-party WebUSB Arduino library
 #include <WebUSB.h>
 
-WebUSB WebUSBSerial( 0/* http:// */, "localhost:3000");
+#define WebUSBOriginProtocol 0 /* http:// */
+WebUSB WebUSBSerial(WebUSBOriginProtocol, "localhost:3000");
 
 // #define Serial WebUSBSerial
 
@@ -13,8 +14,9 @@ PN532_I2C pn532_i2c(Wire);
 NfcAdapter nfc = NfcAdapter(pn532_i2c);
 
 void setup() {
-  WebUSBSerial.begin(9600);
-  Serial.begin(9600);
+  int baudRate = 9600;
+  WebUSBSerial.begin(baudRate);
+  Serial.begin(baudRate);
   while (!Serial && !WebUSBSerial) {};
   Serial.println("NDEF READER");
   nfc.begin();
