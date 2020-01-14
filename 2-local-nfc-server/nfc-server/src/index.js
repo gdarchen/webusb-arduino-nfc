@@ -9,15 +9,19 @@ io.on('connection', (socket) => {
     nfc.on('reader', (reader) => {
       console.log(`${reader.reader.name}  device attached`);
 
+      const pageNumber = 4;
+      const bufferLength = 48;
+
       reader.on('card', async (card) => {
         try {
-          const data = await reader.read(6, 24);
+          const data = await reader.read(pageNumber, bufferLength);
           const extractedPayload = data.toString().split('/')[1];
 
           console.log(`Socket ID: ${socket.id}, Read tag: ${extractedPayload}`);
           socket.emit('nfc-tag-scanned', extractedPayload);
         } catch (err) {
           console.error(err);
+          throw err;
         }
       });
 
