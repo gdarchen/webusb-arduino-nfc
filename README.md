@@ -21,17 +21,7 @@ This repo aims at explaining how I ended up building a NFC Reader with an Arduin
 
 You will find the three solutions I developed to make a web application communicate with a NFC Reader.
 
-## Solution 1 - Electron application using a NFC Reader
-
-![nfc tag] ![react tag] ![electron tag]
-
-Using a ACR122U NFC Reader, I firstly implemented an Electron application to handle NFC reading.
-
-You can find the code for this solution in the `./1-electron` folder.
-
-### See the [1-electron/README.md](1-electron/README.md) file to understand how it works.
-
-## Solution 2 - Local server NFC Reader and _web-sockets_
+## Solution 1 - Local server NFC Reader and _web-sockets_
 
 ![nfc tag]
 ![react tag]
@@ -40,9 +30,19 @@ You can find the code for this solution in the `./1-electron` folder.
 
 Still using a ACR122U NFC Reader, I implemented the a local Node.js server handling the NFC reading part and sending the read payload to a front-end application through _web-sockets_.
 
-You can find the code for this solution in the `./2-local-nfc-server` folder.
+You can find the code for this solution in the `./1-local-nfc-server` folder.
 
-### See the [2-local-nfc-server/README.md](2-local-nfc-server/README.md) file to understand how it works.
+### See the [1-local-nfc-server/README.md](1-local-nfc-server/README.md) file to understand how it works.
+
+## Solution 2 - Electron application using a NFC Reader
+
+![nfc tag] ![react tag] ![electron tag]
+
+Using a ACR122U NFC Reader, I firstly implemented an Electron application to handle NFC reading.
+
+You can find the code for this solution in the `./2-electron` folder.
+
+### See the [2-electron/README.md](2-electron/README.md) file to understand how it works.
 
 ## Solution 3 - Using _WebUSB_ and an Arduino board
 
