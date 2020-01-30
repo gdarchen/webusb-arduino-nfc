@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/webusb-arduino-nfc/static/css/main.478cc15c.chunk.css",
+    "main.js": "/webusb-arduino-nfc/static/js/main.ba317967.chunk.js",
+    "main.js.map": "/webusb-arduino-nfc/static/js/main.ba317967.chunk.js.map",
+    "runtime-main.js": "/webusb-arduino-nfc/static/js/runtime-main.9dd56d6a.js",
+    "runtime-main.js.map": "/webusb-arduino-nfc/static/js/runtime-main.9dd56d6a.js.map",
+    "static/css/2.d11bc91d.chunk.css": "/webusb-arduino-nfc/static/css/2.d11bc91d.chunk.css",
+    "static/js/2.cd1e01bb.chunk.js": "/webusb-arduino-nfc/static/js/2.cd1e01bb.chunk.js",
+    "static/js/2.cd1e01bb.chunk.js.map": "/webusb-arduino-nfc/static/js/2.cd1e01bb.chunk.js.map",
+    "index.html": "/webusb-arduino-nfc/index.html",
+    "precache-manifest.209604f3d5b50cf80f72934e2d95f0b2.js": "/webusb-arduino-nfc/precache-manifest.209604f3d5b50cf80f72934e2d95f0b2.js",
+    "service-worker.js": "/webusb-arduino-nfc/service-worker.js",
+    "static/css/2.d11bc91d.chunk.css.map": "/webusb-arduino-nfc/static/css/2.d11bc91d.chunk.css.map",
+    "static/css/main.478cc15c.chunk.css.map": "/webusb-arduino-nfc/static/css/main.478cc15c.chunk.css.map",
+    "static/media/semantic.min.css": "/webusb-arduino-nfc/static/media/outline-icons.ef60a4f6.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9dd56d6a.js",
+    "static/css/2.d11bc91d.chunk.css",
+    "static/js/2.cd1e01bb.chunk.js",
+    "static/css/main.478cc15c.chunk.css",
+    "static/js/main.ba317967.chunk.js"
+  ]
+}
