@@ -20,7 +20,7 @@
   "dependencies": {
     "nfc-pcsc": "^0.7.4",
     "prettier": "^1.17.1",
-    "socket.io": "^2.2.0"
+    "socket.io": "^2.4.0"
   },
   "scripts": {
     "start": "node -r @babel/register src/index.js"
